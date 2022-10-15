@@ -11,7 +11,8 @@ import {
 import {
     Bars3Icon,
     XMarkIcon,
-    ChevronDownIcon
+    ChevronDownIcon,
+    ArrowLeftIcon
 } from '@heroicons/vue/24/outline'
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -27,4 +28,5 @@ export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.vueApp.component('Bars3Icon', Bars3Icon)
     nuxtApp.vueApp.component('XMarkIcon', XMarkIcon)
     nuxtApp.vueApp.component('ChevronDownIcon', ChevronDownIcon)
+    nuxtApp.vueApp.component('ArrowLeftIcon', ArrowLeftIcon)
 })
