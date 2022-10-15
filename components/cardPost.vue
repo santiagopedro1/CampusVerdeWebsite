@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
     post_title: {
         type: String,
         required: true
@@ -11,10 +11,6 @@ defineProps({
     post_tags: {
         type: Array<string>,
         required: true
-    },
-    post_image: {
-        type: String,
-        required: false
     }
 })
 
@@ -29,13 +25,7 @@ const post_date = new Date().toLocaleDateString('pt-BR', {
     <div class="space-y-4 bg-white transition duration-300 hover:scale-105">
         <nuxt-link :to="'/blog/' + post_title.toLowerCase()">
             <img
-                :src="
-                    'assets/postsImages/' +
-                    post_title.toLowerCase() +
-                    '/' +
-                    post_title.toLowerCase() +
-                    '.webp'
-                "
+                :src="post_title.toLowerCase() + '.jpg'"
                 alt="art cover"
                 loading="lazy"
                 width="1000"

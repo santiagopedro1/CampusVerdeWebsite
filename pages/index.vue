@@ -3,7 +3,7 @@
         <header>
             <div class="flex flex-col">
                 <img
-                    src="assets/foda.jpeg"
+                    src="assets/entrada_trilha.jpeg"
                     alt="Foto da entrada da trilha"
                 />
                 <h1 class="text-5xl my-2 font-bold text-white text-center">
