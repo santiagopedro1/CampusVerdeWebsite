@@ -24,13 +24,14 @@ const post_date = new Date().toLocaleDateString('pt-BR', {
 <template>
     <div class="space-y-4 bg-white transition duration-300 hover:scale-105">
         <nuxt-link :to="'/blog/' + post_title.toLowerCase()">
-            <img
+            <nuxt-img
                 :src="post_title.toLowerCase() + '.jpg'"
                 alt="art cover"
-                loading="lazy"
                 width="1000"
                 height="667"
-                class="h-64 w-full object-cover object-top"
+                quality="70"
+                sizes="sm:100vw md:50vw lg:400px"
+                format="webp"
             />
         </nuxt-link>
 

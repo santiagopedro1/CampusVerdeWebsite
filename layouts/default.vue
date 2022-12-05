@@ -86,7 +86,7 @@ const nav = [
                     >
                         <NuxtLink
                             :to="item.link"
-                            class="flex items-center px-4 py-3 mt-1 border-b-2 border-indigo border-opacity-0 dark:border-opacity-0 border-opacity-0 dark:border-indigo-400 duration-200 hover:border-opacity-100"
+                            class="flex items-center px-4 py-3 mt-1 border-b-2 border-indigo dark:border-opacity-0 border-opacity-0 dark:border-indigo-400 duration-200 hover:border-opacity-100"
                             activeClass="border-opacity-100 dark:border-opacity-100"
                             @click="close"
                         >

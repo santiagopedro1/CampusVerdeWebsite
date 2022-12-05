@@ -2,9 +2,14 @@
     <div>
         <header>
             <div class="flex flex-col">
-                <img
+                <nuxt-img
                     src="/entrada_trilha.jpeg"
                     alt="Foto da entrada da trilha"
+                    format="webp"
+                    quality="75"
+                    width="1284"
+                    height="440"
+                    fit="contain"
                 />
                 <h1
                     class="text-5xl my-2 font-bold text-black dark:text-white text-center"
