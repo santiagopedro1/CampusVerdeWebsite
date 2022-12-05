@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
     post_title: {
         type: String,
         required: true
@@ -35,7 +35,12 @@ const post_date = new Date().toLocaleDateString('pt-BR', {
         </nuxt-link>
 
         <div class="space-y-2 px-3 py-2">
-            <p v-for="tag in post_tags">{{ tag }}</p>
+            <p
+                v-for="tag in post_tags"
+                class="dark:text-zinc-900"
+            >
+                {{ tag }}
+            </p>
             <div class="space-y-4">
                 <nuxt-link
                     :to="'/blog/' + post_title.toLowerCase()"

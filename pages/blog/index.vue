@@ -1,13 +1,19 @@
 <script setup lang="ts">
+useHead({
+    title: 'Blog'
+})
+
 const posts = await queryContent('/blog')
     .only(['title', 'description', 'image', 'tags'])
     .find()
 </script>
 
 <template>
-    <section>
+    <section class="text-black dark:text-white">
         <header class="mb-12 space-y-2 text-center mt-6">
-            <h2 class="text-3xl text-fuchsia-100 font-bold md:text-4xl">
+            <h2
+                class="text-3xl dark:text-zinc-100 text-zinc-900 font-bold md:text-4xl"
+            >
                 Blog
             </h2>
             <p class="lg:w-6/12 lg:mx-auto dark:text-white">

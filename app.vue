@@ -5,7 +5,6 @@ useHead({
             ? `${title} - Campus Verde`
             : 'Trilha interpretativa Campus Verde'
     },
-    lang: 'pt-br',
     htmlAttrs: {
         lang: 'pt-br',
         class: 'h-full bg-gray-200 dark:bg-slate-900'
@@ -19,6 +18,7 @@ useHead({
 <template>
     <div>
         <NuxtLayout>
+            <NuxtLoadingIndicator color="#6366f1" />
             <NuxtPage />
         </NuxtLayout>
     </div>

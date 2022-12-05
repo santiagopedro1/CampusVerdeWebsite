@@ -3,10 +3,12 @@
         <header>
             <div class="flex flex-col">
                 <img
-                    src="assets/entrada_trilha.jpeg"
+                    src="/entrada_trilha.jpeg"
                     alt="Foto da entrada da trilha"
                 />
-                <h1 class="text-5xl my-2 font-bold text-white text-center">
+                <h1
+                    class="text-5xl my-2 font-bold text-black dark:text-white text-center"
+                >
                     Trilha Interpretativa Campus Verde
                 </h1>
             </div>
