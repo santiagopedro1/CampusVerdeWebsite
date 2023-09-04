@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Page.astro'
+import { getCollection } from 'astro:content'
+import FormattedDate from '../../components/FormattedDate.astro'
+import Header from '../../components/Header.astro'
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+
+const featuredPost = posts.find((post) => post.data.featured)
+if (featuredPost) {
+	posts.splice(posts.indexOf(featuredPost), 1)
+}
+---
+
+<Layout titleAppend="Blog">
+	<Header />
+	<main class="mx-auto my-8 max-w-[100dvw] px-4 md:max-w-4xl">
+		<h1 class="mb-4 text-center text-xl font-bold">Blog</h1>
+
+		{
+			featuredPost && (
+				<div class="mb-8 flex flex-col items-center">
+					<a
+						href={`/blog/${featuredPost.slug}`}
+						class="block"
+					>
+						<img
+							width={200}
+							src={featuredPost.data.heroImage}
+							alt=""
+							class="mb-2 rounded-xl"
+						/>
+						<h2 class="leading-none text-black">{featuredPost.data.title}</h2>
+						<p class="text-xs text-gray-500">
+							<FormattedDate date={featuredPost.data.pubDate} />
+						</p>
+					</a>
+				</div>
+			)
+		}
+		<ul>
+			{
+				posts.map((post) => (
+					<li class="my-6">
+						<a
+							href={`/blog/${post.slug}`}
+							class="inline-block text-lg text-green-700 decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+						>
+							<h2 class="text-lg decoration-dashed hover:underline">{post.data.title}</h2>
+						</a>
+						<p class="-mt-px mb-1">
+							<FormattedDate date={post.data.pubDate} />
+						</p>
+						<p>{post.data.description}</p>
+					</li>
+				))
+			}
+		</ul>
+	</main>
+</Layout>

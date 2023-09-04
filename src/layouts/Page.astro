@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+
+type Props = {
+	titleAppend?: string
+}
+const { titleAppend = '' }: Props = Astro.props
+---
+
+<!doctype html>
+<html
+	lang="pt-br"
+	class="text-[18px]"
+>
+	<head>
+		<BaseHead
+			title={titleAppend ? `${SITE_TITLE} | ${titleAppend}` : SITE_TITLE}
+			description={SITE_DESCRIPTION}
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

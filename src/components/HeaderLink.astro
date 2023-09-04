@@ -1,0 +1,18 @@
+---
+type Props = {
+	href: string
+}
+
+const { href } = Astro.props
+
+const { pathname } = Astro.url
+const isActive = href === pathname || href === pathname.replace(/\/$/, '')
+---
+
+<a
+	{href}
+	class:list={[isActive ? 'pointer-events-none font-bold' : '', 'px-3 py-1']}
+>
+	<slot />
+</a>
+<div class:list={[isActive ? 'bg-green-700' : '', 'mt-1 h-1']}></div>
